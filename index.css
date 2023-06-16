@@ -1,0 +1,57 @@
+html {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  width: 110px;
+  height: 30px;
+  font-size: 15px;
+  background-color: #ff3482;
+  color: white;
+  box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.2);
+}
+.btn:hover {
+  filter: brightness(90%);
+}
+.btn:active {
+  transform: translateY(3px);
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(/robot.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media only screen and (max-width: 480px) {
+  .btn {
+    width: 80px;
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 100px) {
+  .btn {
+    width: 50px;
+    font-size: 6px;
+    box-shadow: 5px 5px 30px 20px rgba(0, 0, 0, 0.5);
+  }
+}
