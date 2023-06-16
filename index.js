@@ -39,7 +39,7 @@ const VoiceRSS = {
         if (0 == t.responseText.indexOf("ERROR")) throw t.responseText;
         // new Audio(t.responseText).play();
         audioElement.src = t.responseText;
-        audioElement.play;
+        audioElement.play();
       }
     }),
       t.open("POST", "https://api.voicerss.org/", !0),
@@ -107,10 +107,12 @@ const VoiceRSS = {
     throw "The browser does not support HTTP request";
   },
 };
-function test() {
+
+// Pass the joke value
+function tellme(joke) {
   VoiceRSS.speech({
     key: "6c4d752e6a6d4f5ea3c633be9de1cbef",
-    src: "Hello, Shivam Sharma You Are the best coder",
+    src: joke,
     hl: "en-us",
     v: "Linda",
     r: 0,
@@ -120,4 +122,28 @@ function test() {
   });
 }
 
-test();
+//  Get joke from Joke API
+const url =
+  "https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random";
+const options = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    "X-RapidAPI-Key": "a87a66e3abmsh2ec1cda2ab7788ap1d1025jsn41463b6baecd",
+    "X-RapidAPI-Host": "matchilling-chuck-norris-jokes-v1.p.rapidapi.com",
+  },
+};
+async function joke() {
+  try {
+    const response = await fetch(url, options);
+    const result = await response.json();
+    const joke = result.value;
+    tellme(joke);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Event Listener
+
+button.addEventListener("click", joke);

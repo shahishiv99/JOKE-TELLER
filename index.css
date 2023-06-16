@@ -14,9 +14,10 @@ body {
   outline: none;
   border: none;
   border-radius: 5px;
-  width: 110px;
+  margin: 5px;
+  width: 120px;
   height: 30px;
-  font-size: 15px;
+  font-size: 12px;
   background-color: #ff3482;
   color: white;
   box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.2);
@@ -43,15 +44,23 @@ body {
 
 @media only screen and (max-width: 480px) {
   .btn {
-    width: 80px;
+    width: 100px;
     font-size: 10px;
+  }
+  #audio {
+    height: 40px;
+    width: 150px;
   }
 }
 
 @media only screen and (max-width: 100px) {
   .btn {
     width: 50px;
-    font-size: 6px;
+    font-size: 5px;
     box-shadow: 5px 5px 30px 20px rgba(0, 0, 0, 0.5);
+  }
+  #audio {
+    height: 40px;
+    width: 120px;
   }
 }
