@@ -107,6 +107,10 @@ const VoiceRSS = {
     throw "The browser does not support HTTP request";
   },
 };
+// joke time hidden button
+function disabledBtn() {
+  button.hidden = !button.hidden;
+}
 
 // Pass the joke value
 function tellme(joke) {
@@ -139,6 +143,7 @@ async function joke() {
     const result = await response.json();
     const joke = result.value;
     tellme(joke);
+    disabledBtn();
   } catch (error) {
     console.error(error);
   }
@@ -147,3 +152,5 @@ async function joke() {
 // Event Listener
 
 button.addEventListener("click", joke);
+
+audioElement.addEventListener("ended", disabledBtn);
